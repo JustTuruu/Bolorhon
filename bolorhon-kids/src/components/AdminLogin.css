@@ -1,0 +1,201 @@
+/* Admin Login Styles */
+.admin-login {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.admin-login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+.login-container {
+  background: white;
+  border-radius: 25px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.login-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.login-form {
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 15px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 20px rgba(102,126,234,0.2);
+  transform: translateY(-2px);
+}
+
+.error-message {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: bold;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.login-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.login-btn:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.login-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(102,126,234,0.4);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.login-info {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid #dee2e6;
+}
+
+.login-info p {
+  margin: 0.3rem 0;
+  color: #495057;
+}
+
+.login-info p:first-child {
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  color: #2c3e50;
+}
+
+.login-info strong {
+  color: #667eea;
+  font-family: 'Courier New', monospace;
+  background: rgba(102,126,234,0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .admin-login {
+    padding: 1rem;
+  }
+  
+  .login-container {
+    padding: 2rem;
+  }
+  
+  .login-header h2 {
+    font-size: 1.8rem;
+  }
+}
