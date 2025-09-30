@@ -672,7 +672,7 @@ function App() {
             <div className="footer-section">
               <h4>Холбоо барих</h4>
               <p>📧 info@bolorhonkids.mn</p>
-              <p>📞 +976 7000-0000</p>
+              <p>📞 +976 99628060</p>
             </div>
             <div className="footer-section">
               <h4>Дагах</h4>
